@@ -1,6 +1,3 @@
-!git clone https://github.com/lolanto-ds/portfolio_python.git
-import pandas as pd
-
 def drawdown(return_series: pd.Series):
   """
   Takes a time series of asset returns
