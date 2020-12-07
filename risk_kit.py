@@ -28,3 +28,13 @@ def get_ffme_return():
   rets = rets/100
   rets.index = pd.to_datetime(rets.index, format="%Y%m").to_period('M')
   return rets
+
+def get_hfi_return():
+  """
+  Load the HDHEC Hedge Fund Index Dataset for the returns of the Top and Bottom Deciles by MarketCap
+  """
+  hfi = pd.read_csv('/content/portfolio_python/data/edhec-hedgefundindices.csv',
+                     header=0, index_col=0, na_values=-99.99)
+  hfi = hfi/100
+  hfi.index = pd.to_datetime(rets.index, format="%Y%m").to_period('M')
+  return hfi
